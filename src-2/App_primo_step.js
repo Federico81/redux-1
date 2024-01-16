@@ -55,3 +55,12 @@ const mapDispatchToProps = {
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
+/*
+Metodo connect()
+Una volta messo a disposizione lo store all’applicazione dobbiamo collegare  React con questo. L’unico modo per comunicare con lo store è quello di  inviare azioni e di recuperare lo stato. In precedenza abbiamo visto come fare utilizzando i metodi store.dispatch() per inviare azioni e store.getState() per recuperare l’ultimo snapshot dello stato.Il metodo connect() ci consente di fare la medesima cosa con l’ausilio di due metodi denominati mapDispatchToProps e mapStateToProps
+mapStateToProps e mapDispatchToProps restituiscono entrambi un oggetto e la chiave di questo oggetto diventa una props del componente collegato. Per esempio , state.contacts.newContact è mappata a props.newContact. L’action creator addContact() viene mappato a props.addContact.
+
+La funzione connect() restituisce una funzione che ci permette di creare un Container Component a partire da un determinato componente che passiamo come argomento. La funzione connect() può ricevere invece due argomenti che sono due riferimenti a due funzioni. La prima è la funzione mapStateToProps, attraverso la quale passiamo le proprietà dell'oggetto State (lo stato globale dell'applicazione restituito dal rootReducer) al Container Component tramite l'oggetto props. In questo modo, invece di dover invocare la funzione state.getState() e poi accedere alle diverse proprietà, accediamo alle proprietà dell'oggetto State usando semplicemente this.props.nome_proprietà. Per far ciò dovremo definire una funzione mapStateToProps come segue.
+
+*/
+
